@@ -9,7 +9,7 @@ services:
       OWNER_ID: ${OWNER_ID}
       DEV_MODE: ${DEV_MODE:-false}
       LANGUAGE_START_COMMAND_TEXT: ${LANGUAGE_START_COMMAND_TEXT:-"Welcome in our support chat! Ask your question here."}
-      LANGUAGE_FAQ_COMMAND_TEXT: ${LANGUAGE_FAQ_COMMAND_TEXT:-'Get this bot at: [github.com](https://github.com/bostrot/telegram-support-bot)'}
+      LANGUAGE_FAQ_COMMAND_TEXT: ${LANGUAGE_FAQ_COMMAND_TEXT}
 
   mongodb:
     image: mongo:8.0
