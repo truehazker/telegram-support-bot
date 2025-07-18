@@ -73,10 +73,9 @@ class TelegramAddon implements Addon {
   sendDocument = (
     chatId: string | number,
     document: any,
-    other?: any,
-    signal?: any
+    other?: any
   ) => {
-    this.bot.api.sendDocument(chatId, document, other, signal);
+    this.bot.api.sendDocument(chatId, document, other);
   };
 
   sendPhoto(chatId: string | number, photo: any, options?: any) {

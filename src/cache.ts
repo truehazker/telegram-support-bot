@@ -1,6 +1,5 @@
-import { Cache, Config } from './interfaces';
-import * as YAML from 'yaml';
-import * as fs from 'fs';
+import { Cache } from './interfaces';
+import { loadConfig } from './config';
 
 const cache: Cache = {
   userId: '',
@@ -11,13 +10,7 @@ const cache: Cache = {
   noSound: '',
   markdown: '',
   io: {},
-  config: {
-    use_llm: false
-  } as Config,
+  config: loadConfig(),
 };
-
-cache.config = YAML.parse(
-  fs.readFileSync('./config/config.yaml', 'utf8'),
-);
 
 export default cache;

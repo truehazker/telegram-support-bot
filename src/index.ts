@@ -5,7 +5,6 @@ import { Addon } from './interfaces';
 import * as db from './db';
 import * as error from './error';
 import TelegramAddon from './addons/telegram';
-import SignalAddon from './addons/signal';
 import * as log from 'fancy-log'
 
 /**
@@ -39,20 +38,13 @@ function createAddons(): Addon[] {
   // Create Telegram addon if a bot token is provided.
   if (cache.config && cache.config.bot_token) {
     if (cache.config.bot_token === 'YOUR_BOT_TOKEN') {
-      log.error('Please change your bot token in config/config.yaml');
+      log.error('Please set your BOT_TOKEN environment variable');
       process.exit(1);
     }
     const telegram = TelegramAddon.getInstance(cache.config.bot_token);
     // Tag the addon with its platform (for later identification).
     (telegram as any).platform = 'telegram';
     addons.push(telegram);
-  }
-
-  // Create Signal addon if enabled.
-  if (cache.config && cache.config.signal_enabled) {
-    const signalAddon = SignalAddon.getInstance();
-    (signalAddon as any).platform = 'signal';
-    addons.push(signalAddon);
   }
 
   return addons;

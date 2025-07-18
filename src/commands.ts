@@ -70,10 +70,8 @@ const openCommand = (ctx: Context): void => {
       if (ticket.userid != null) {
         let ticketInfo = '';
         const uidStr = ticket.userid.toString();
-        if (uidStr.includes('WEB')) {
+                if (uidStr.includes('WEB')) {
           ticketInfo = '(web)';
-        } else if (uidStr.includes('SIGNAL')) {
-          ticketInfo = '(signal)';
         }
         openTickets += `#T${ticket.id.toString().padStart(6, '0')} ${ticketInfo}\n`;
       }

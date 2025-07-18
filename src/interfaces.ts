@@ -104,9 +104,6 @@ export class Config {
   anonymous_tickets: boolean = false;
   anonymous_replies: boolean = false;
   show_auto_replied: boolean = true;
-  signal_enabled: boolean = false;
-  signal_number: string = '';
-  signal_host: string = 'signal-cli:40153';
   web_server: boolean = false;
   web_server_port: number = 3000;
   web_server_ssl_cert: string = '';
@@ -251,7 +248,6 @@ export interface Addon {
 
 export enum Messenger {
   TELEGRAM = 'telegram',
-  SIGNAL = 'signal',
   WEB = 'web',
 }
 
