@@ -13,7 +13,7 @@ test:
 - any: ['test/**/*']
 
 docker:
-- any: ['Dockerfile', 'docker-compose.yml', 'Dockerfile.signal']
+- any: ['Dockerfile', 'docker-compose.yml']
 
 github:
 - any: ['.github']
